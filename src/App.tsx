@@ -1,11 +1,15 @@
 import './App.css'
-import UserProfileInterface from './components/UserProfileInterface'
+import Counter from './components/Counter'
+import ObjectState from './components/ObjectState'
+import StringState from './components/StringState'
 
 function App() {
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>TypeScript+React Exercises</h1>
-      <UserProfileInterface name='Nikhil' age={19} IsOnline={false} city='India'/>
+      <Counter /><br />
+      <StringState /><br />
+      <ObjectState/>
     </>
   )
 }
