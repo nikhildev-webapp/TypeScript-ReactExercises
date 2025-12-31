@@ -1,11 +1,12 @@
 import './App.css'
-import Form from './components/Form'
+import CheckBoxState from './components/CheckBoxState'
+
 
 function App() {
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>TypeScript+React Exercises</h1>
-      <Form/>
+           <CheckBoxState/>
     </>
   )
 }
