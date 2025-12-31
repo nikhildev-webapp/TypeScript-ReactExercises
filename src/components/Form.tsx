@@ -12,17 +12,28 @@ const Form = () => {
         left:'50%',
         transform:'translate(-50%,-50%)'
     }
-    const [name, setName] = useState<string>('');
-    const [phone, setPhone] = useState<number>();
+    const [name,setName] = useState<string>('');
+    const [phone, setPhone] = useState<string>('');
+    
+    const handleSubmit = (e:any) => {
+        e.preventDefault();
+        if(!name || !phone){
+            alert("Please fill all the fields");
+            return;
+        }
+        console.log("UserName:", name, "Phone:", phone);
+        setPhone('');
+        setName('');
+    }
   return (
       <>
           <div  style={containerStyle}>
-              <form>
+              <form onSubmit={handleSubmit}>
                   <h2>TestForm</h2>
                   <label>Name: </label>
-                  <input  type="text" placeholder="Enter your Name.."  value={name}/><br />
+                  <input  type="text" placeholder="Enter your Name.."  value={name} onChange={(e)=>{setName(e.target.value)}}/><br />
                   <label >Phone:</label>
-                  <input  type="tel" placeholder="Enter Phone Number.." value={phone} /><br />
+                  <input  type="tel" placeholder="Enter Phone Number.." value={phone} onChange={(e)=>{setPhone(e.target.value)}}/><br />
                   <button style={{padding:'5px',borderRadius:'10px',position:'relative',left:'30%', marginTop:'10px'}}>SaveData</button>
               </form>
           </div>
